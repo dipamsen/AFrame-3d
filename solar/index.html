@@ -6,6 +6,7 @@
   <title>Solar System</title>
   <meta name="description" content="Solar System">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- <script src="https://supermedium.com/superframe/components/orbit-controls/dist/aframe-orbit-controls.min.js"></script> -->
 </head>
 
 <body>
@@ -15,6 +16,9 @@
       <a-camera>
       </a-camera>
     </a-entity>
+    <a-entity camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 15 20">
+    </a-entity>
+
 
     <!-- SUN -->
     <a-entity>
