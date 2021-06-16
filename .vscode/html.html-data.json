@@ -1,0 +1,131 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "a-scene",
+      "description": "A scene is represented by the `<a-scene>` element. The scene is the global root\nobject, and all [entities](https://aframe.io/docs/1.2.0/core/entity.html) are contained within the scene.",
+      "attributes": [
+        {
+          "name": "background",
+          "description": "The background component sets a basic color background of a scene",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/background.html"
+            }
+          ]
+        },
+        {
+          "name": "debug",
+          "description": "The debug component enables component-to-DOM serialization.",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/debug.html"
+            }
+          ]
+        },
+        {
+          "name": "device-orientation-permission-ui",
+          "description": "Starting with Safari on iOS 13 browsers require sites to be served over `https` and request user permission to access DeviceOrientation events. This component presents a permission dialog for the user to grant or deny access.\nThe device-orientation-permission-ui component applies only to the [`<a-scene>` element](https://aframe.io/docs/1.2.0/core/scene.html)",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/device-orientation-permission-ui.html"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "A-Frame Reference",
+          "url": "https://aframe.io/docs/1.2.0/core/scene.html"
+        }
+      ]
+    },
+    {
+      "name": "a-entity",
+      "description": "A-Frame represents an entity via the `<a-entity>` element. As defined in the\n[entity-component-system pattern](https://aframe.io/docs/1.2.0/introduction/entity-component-system.html), entities are placeholder objects to\nwhich we plug in components to provide them appearance, behavior, and\nfunctionality.",
+      "attributes": [
+        {
+          "name": "position",
+          "description": "The position component places entities at certain spots in 3D space. Position takes a coordinate value as three space-delimited numbers.\n\nAll entities inherently have the position component.",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/position.html"
+            }
+          ]
+        },
+        {
+          "name": "rotation",
+          "description": "The rotation component defines the orientation of an entity in degrees. It\ntakes the pitch (`x`), yaw (`y`), and roll (`z`) as three space-delimited\nnumbers indicating degrees of rotation.\n\nAll entities inherently have the rotation component.\n",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/rotation.html"
+            }
+          ]
+        },
+        {
+          "name": "scale",
+          "description": "The scale component defines a shrinking, stretching, or skewing transformation of an entity. It takes three scaling factors for the X, Y, and Z axes.\n\nAll entities inherently have the scale component.\n",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/scale.html"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "A-Frame Reference",
+          "url": "https://aframe.io/docs/1.2.0/core/entity.html"
+        }
+      ]
+    },
+    {
+      "name": "a-box",
+      "description": "The box primitive creates shapes such as boxes, cubes, or walls.",
+      "attributes": [
+        {
+          "name": "position",
+          "description": "The position component places entities at certain spots in 3D space. Position takes a coordinate value as three space-delimited numbers.\n\nAll entities inherently have the position component.",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/position.html"
+            }
+          ]
+        },
+        {
+          "name": "rotation",
+          "description": "The rotation component defines the orientation of an entity in degrees. It\ntakes the pitch (`x`), yaw (`y`), and roll (`z`) as three space-delimited\nnumbers indicating degrees of rotation.\n\nAll entities inherently have the rotation component.\n",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/rotation.html"
+            }
+          ]
+        },
+        {
+          "name": "scale",
+          "description": "The scale component defines a shrinking, stretching, or skewing transformation of an entity. It takes three scaling factors for the X, Y, and Z axes.\n\nAll entities inherently have the scale component.\n",
+          "references": [
+            {
+              "name": "A-Frame Reference",
+              "url": "https://aframe.io/docs/1.2.0/components/scale.html"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "A-Frame Reference",
+          "url": "https://aframe.io/docs/1.2.0/primitives/a-box.html"
+        }
+      ]
+    }
+  ]
+}
