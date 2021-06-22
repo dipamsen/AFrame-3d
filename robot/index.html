@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-camera position="0 0 10" wasd-controls="wsAxis: y; wsInverted: true"></a-camera>
+    <!-- <a-camera position="0 0 10"></a-camera> -->
+    <a-plane color="grey" height="10" width="10" position="0 -4 0" rotation="-90 0 0"></a-plane>
+    <a-box position="0 0 0" color="blue" width="5" height="5"></a-box>
+    <a-sphere position="1 1 0" color="white"></a-sphere>
+    <a-sphere position="-1 1 0" color="white"></a-sphere>
+    <a-sphere position="1 1 0.7" color="black" scale="0.5 0.5 0.5"></a-sphere>
+    <a-sphere position="-1 1 0.7" color="black" scale="0.5 0.5 0.5"></a-sphere>
+    <a-box position="0 -1 0.5" width="2"></a-box>
+    <a-cone position="0 -2 -1" scale="2 4 2" color="red"></a-cone>
+    
+  </a-scene>
+</body>
+
+</html>
