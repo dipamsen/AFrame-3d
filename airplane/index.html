@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airplane</title>
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="./components/Rotation.js"></script>
+</head>
+
+<body>
+  <a-scene background="grey">
+    <a-assets>
+      <a-asset src="./models/airplane/scene.gltf" id="plane"></a-asset>
+      <a-asset src="./models/map/scene.gltf" id="map"></a-asset>
+    </a-assets>
+
+    <a-entity wasd-controls="enabled: false" arrow-controls gltf-model="#plane" position="0 0 0" scale="1 1 1"
+      rotation="0 90 0">
+
+    </a-entity>
+
+    <a-entity gltf-model="#map" position="0 0 0" scale="0.5 0.5 0.5" rotation="0 90 0"
+      animation="property: position; to: 0 0 1000; easing: linear; loop: true; dur: 150000">
+
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
