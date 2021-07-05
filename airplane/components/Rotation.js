@@ -11,7 +11,6 @@ AFRAME.registerComponent("arrow-controls", {
 
       if (e.key === "ArrowRight") {
         if (rotation.x < 10) {
-
           rotation.x += 0.01;
           this.el.setAttribute("rotation", Object.create(rotation));
         }
@@ -46,6 +45,42 @@ AFRAME.registerComponent("arrow-controls", {
       x: rotation.x,
       y: rotation.y,
       z: rotation.z,
+    });
+  },
+});
+
+AFRAME.registerComponent("map", {
+  schema: {},
+  init() {
+    window.addEventListener("keydown", (e) => {
+      const rotation = this.el.getAttribute("rotation");
+
+      if (e.key === "ArrowRight") {
+        if (rotation.x < 10) {
+          rotation.x += 0.01;
+          this.el.setAttribute("rotation", Object.create(rotation));
+        }
+      }
+      if (e.key === "ArrowLeft") {
+        if (rotation.x > -10) {
+          rotation.x -= 0.01;
+          console.log(rotation);
+          this.el.setAttribute("rotation", Object.create(rotation));
+        }
+      }
+
+      if (e.key === "ArrowUp") {
+        if (rotation.z < 10) {
+          rotation.z += 0.01;
+          this.el.setAttribute("rotation", Object.create(rotation));
+        }
+      }
+      if (e.key === "ArrowDown") {
+        if (rotation.z > -10) {
+          rotation.z -= 0.01;
+          this.el.setAttribute("rotation", Object.create(rotation));
+        }
+      }
     });
   },
 });

@@ -18,12 +18,13 @@
       <a-asset src="./models/map/scene.gltf" id="map"></a-asset>
     </a-assets>
 
-    <a-entity wasd-controls="enabled: false" arrow-controls gltf-model="#plane" position="0 0 0" scale="1 1 1"
-      rotation="0 90 0">
+    <a-camera></a-camera>
+
+    <a-entity arrow-controls gltf-model="#plane" position="0 0 0" scale="1 1 1" rotation="0 90 0">
 
     </a-entity>
 
-    <a-entity gltf-model="#map" position="0 0 0" scale="0.5 0.5 0.5" rotation="0 90 0"
+    <a-entity map gltf-model="#map" position="0 0 0" scale="0.5 0.5 0.5" rotation="0 90 0"
       animation="property: position; to: 0 0 1000; easing: linear; loop: true; dur: 150000">
 
     </a-entity>
