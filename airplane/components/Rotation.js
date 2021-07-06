@@ -1,84 +1,79 @@
-AFRAME.registerComponent("arrow-controls", {
+//Terrain Rotation
+AFRAME.registerComponent("terrain-rotation-reader", {
   schema: {
-    rotationSpeed: {
-      type: "number",
-      default: 0,
-    },
+    speedOfRoation: { type: "number", default: 0 },
   },
-  init() {
+  init: function () {
     window.addEventListener("keydown", (e) => {
-      const rotation = this.el.getAttribute("rotation");
-
       if (e.key === "ArrowRight") {
-        if (rotation.x < 10) {
-          rotation.x += 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (this.data.speedOfRoation < 0.1) {
+          this.data.speedOfRoation += 0.01;
         }
       }
       if (e.key === "ArrowLeft") {
-        if (rotation.x > -10) {
-          rotation.x -= 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
-        }
-      }
-
-      if (e.key === "ArrowUp") {
-        if (rotation.z < 10) {
-          rotation.z += 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
-        }
-      }
-      if (e.key === "ArrowDown") {
-        if (rotation.z > -10) {
-          rotation.z -= 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (this.data.speedOfRoation > -0.1) {
+          this.data.speedOfRoation -= 0.01;
         }
       }
     });
   },
-  tick() {
-    const rotation = this.el.getAttribute("rotation");
+  tick: function () {
+    var mapRotation = this.el.getAttribute("rotation");
 
-    rotation.y += this.data.rotationSpeed;
+    mapRotation.y += this.data.speedOfRoation;
 
     this.el.setAttribute("rotation", {
-      x: rotation.x,
-      y: rotation.y,
-      z: rotation.z,
+      x: mapRotation.x,
+      y: mapRotation.y,
+      z: mapRotation.z,
     });
   },
 });
 
-AFRAME.registerComponent("map", {
-  schema: {},
-  init() {
+//Plane rotation component
+AFRAME.registerComponent("plane-rotation-reader", {
+  schema: {
+    speedOfRoation: { type: "number", default: 0 },
+    speedOfAscent: { type: "number", default: 0 },
+  },
+  init: function () {
     window.addEventListener("keydown", (e) => {
-      const rotation = this.el.getAttribute("rotation");
+      this.data.speedOfRoation = this.el.getAttribute("rotation");
+      this.data.speedOfAscent = this.el.getAttribute("position");
+
+      var planeRotation = this.data.speedOfRoation;
+      var planePosition = this.data.speedOfAscent;
 
       if (e.key === "ArrowRight") {
-        if (rotation.x < 10) {
-          rotation.x += 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (planeRotation.x < 10) {
+          planeRotation.x += 0.5;
+          this.el.setAttribute("rotation", planeRotation);
         }
       }
       if (e.key === "ArrowLeft") {
-        if (rotation.x > -10) {
-          rotation.x -= 0.01;
-          console.log(rotation);
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (planeRotation.x > -10) {
+          planeRotation.x -= 0.5;
+          this.el.setAttribute("rotation", planeRotation);
         }
       }
-
       if (e.key === "ArrowUp") {
-        if (rotation.z < 10) {
-          rotation.z += 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (planeRotation.z < 20) {
+          planeRotation.z += 0.5;
+          this.el.setAttribute("rotation", planeRotation);
+        }
+        if (planePosition.y < 2) {
+          planePosition.y += 0.01;
+          this.el.setAttribute("position", planePosition);
         }
       }
       if (e.key === "ArrowDown") {
-        if (rotation.z > -10) {
-          rotation.z -= 0.01;
-          this.el.setAttribute("rotation", Object.create(rotation));
+        if (planeRotation.z > -10) {
+          planeRotation.z -= 0.5;
+          this.el.setAttribute("rotation", planeRotation);
+        }
+        if (planePosition.y > -2) {
+          planePosition.y -= 0.01;
+          this.el.setAttribute("position", planePosition);
         }
       }
     });

@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airplane</title>
 
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
   <script src="./components/Rotation.js"></script>
+  <script src="./components/Target.js"></script>
+  <script src="./components/Bird.js"></script>
+
 </head>
 
 <body>
-  <a-scene background="grey">
-    <a-assets>
-      <a-asset src="./models/airplane/scene.gltf" id="plane"></a-asset>
-      <a-asset src="./models/map/scene.gltf" id="map"></a-asset>
+
+  <a-scene background="color:#026F90">
+
+    <a-entity id="look" look-controls camera position="0 2 20"></a-entity>
+
+    <!--Asset Management-->
+    <a-assets timeout="10000">
+      <a-asset-item id="terrainMap" src="./assets/models/terrain/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="plane" src="./assets/models/airplane/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="bird" src="./assets/models/flying_bird/scene.gltf"></a-asset-item>
+
     </a-assets>
 
-    <a-camera></a-camera>
-
-    <a-entity arrow-controls gltf-model="#plane" position="0 0 0" scale="1 1 1" rotation="0 90 0">
-
+    <!-- Terrain  -->
+    <a-entity id="terrain" gltf-model="#terrainMap" position="0 0 0" scale="0.3 0.3 0.3"
+      animation="property: position; to: 0 0 1000;easing:linear; loop: true; dur: 150000" terrain-rotation-reader
+      target-ring flying-birds>
     </a-entity>
 
-    <a-entity map gltf-model="#map" position="0 0 0" scale="0.5 0.5 0.5" rotation="0 90 0"
-      animation="property: position; to: 0 0 1000; easing: linear; loop: true; dur: 150000">
-
+    <!-- Plane -->
+    <a-entity id="plane_model" gltf-model="#plane" position="0 0 15" scale="1 1" rotation="0 90 0"
+      plane-rotation-reader>
     </a-entity>
+
   </a-scene>
 </body>
 
