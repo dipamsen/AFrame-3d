@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+</head>
+
+<body>
+  <a-scene physics="debug:true; ">
+    <!--Camera-->
+    <a-entity position="0 1.6 15">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <!--Torus-->
+    <a-entity>
+      <a-torus position="5 5 -5" color="#43ABBE" dynamic-body="shape:sphere; sphereRadius:2">
+      </a-torus>
+    </a-entity>
+
+    <!--Sphere-->
+    <a-entity>
+      <a-sphere position="0 5 -5" color="orange" dynamic-body> </a-sphere>
+    </a-entity>
+
+    <!--Floor-->
+    <a-entity>
+      <a-box color="#EF2D5E" position="2.5 -5 -10" rotation="0 0 0" scale="20 1 20" static-body>
+      </a-box>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>

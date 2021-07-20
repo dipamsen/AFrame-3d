@@ -18,6 +18,8 @@ AFRAME.registerComponent("flying-birds", {
     birdEl.setAttribute("position", pos);
     birdEl.setAttribute("scale", { x: 500, y: 500, z: 500 });
     birdEl.setAttribute("animation-mixer", {});
+    birdEl.setAttribute("static-body", { shape: "sphere", sphereRadius: 1 });
+    birdEl.setAttribute("gameplay", { elementId: `#${id}` });
     terrainEl.appendChild(birdEl);
   },
 });
