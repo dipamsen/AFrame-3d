@@ -12,16 +12,24 @@
 
 <body>
   <a-scene background="color: pink">
+    <!-- ground -->
     <a-plane color="#654321" position="0 0 0" rotation="-90 0 0" width="20" height="10"></a-plane>
 
-    <a-box
+    <!-- back wall -->
+    <a-plane
       src="https://st.depositphotos.com/2619031/3075/i/600/depositphotos_30759165-stock-photo-wood-texture-ecological-background.jpg"
       position="0 6.5 -4.5" width="20" height="13">
-    </a-box>
+    </a-plane>
 
+    <!-- walls -->
+    <a-plane position="10 6.5 0" color="lightblue" width="10" height="13" rotation="0 -90 0"></a-plane>
+    <a-plane position="-10 6.5 0" width="10" color="lightblue" height="13" rotation="0 90 0"></a-plane>
+
+    <!-- flower pic 1 -->
     <a-plane src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Flower%28asarfi%29.jpg" position="0 6 -3.3"
       rotation="0 0 0" width="4" height="6"></a-plane>
 
+    <!-- flower pic 2 -->
     <a-plane src="https://live.staticflickr.com/65535/50113033078_b31c41bec8_b.jpg" position="6 6 -3.3" rotation="0 0 0"
       width="4" height="6"></a-plane>
 
