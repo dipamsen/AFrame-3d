@@ -1,0 +1,11 @@
+{
+  "include": [
+    "*/**.js"
+  ],
+  "typeAcquisition": {
+    "include": [
+      "aframe"
+    ],
+    "enable": true
+  }
+}

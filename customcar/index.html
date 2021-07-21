@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <style>
+    p {
+      position: absolute;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .credit {
+      top: 0
+    }
+
+    .source {
+      bottom: 0
+    }
+  </style>
+
+  <script src="Car.js"></script>
+
+</head>
+
+<body>
+  <a-scene background="color: grey">
+
+    <a-camera position="0 2 4"></a-camera>
+
+    <a-entity rotation="0 -90 0" position="-10 0 -10">
+      <a-cylinder color="blue" position="0 0 -10" radius="8" height="0.5"></a-cylinder>
+      <a-entity position="19 20.69 -7.486">
+
+        <a-entity car id="#car" gltf-model="./assets/models/car/scene.gltf" position="6 2 -10" scale="2 2 2">
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+  </a-scene>
+  <div style="display: flex; justify-content: center;">
+    <p class="credit">
+      This work is based on
+      <a target="_blank"
+        href="https://sketchfab.com/3d-models/free-1972-datsun-240k-gt-b2303a552b444e5b8637fdf5169b41cb">
+        "1972 Datsun 240k GT"</a><br>
+      by <a target="_blank" href="https://sketchfab.com/karolmiklas">Karol Miklas</a><br>
+      licensed under <a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        CC-BY-SA-4.0</a>
+    </p>
+    <p class="source">
+      View Source Code on GitHub <br> <a href="https://github.com/dipamsen/AFrame-3D/tree/main/customcar">dipamsen /
+        AFrame-3D</a>
+    </p>
+  </div>
+</body>
+
+</html>

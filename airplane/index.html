@@ -42,6 +42,39 @@
       dynamic-body="mass: 0" gameplay>
     </a-entity>
 
+    <a-entity id="header" position="1 -4 0">
+      <a-entity position="-28 21.5 0"
+        text="font: exo2bold; align: center; width: 45; color: black; value: VIRTUAL FLIGHT">
+      </a-entity>
+    </a-entity>
+    <a-entity position="-23.5 19.3 0">
+      <a-entity position="-1 -4.07 0" text="font: aileronsemibold; width: 10; value: TIME\nREMAINING; color: black">
+      </a-entity>
+      <a-entity id="timer" position="-8 -4 0"
+        text="font: exo2bold; align: center; width: 30; color: black; value: 00:00">
+      </a-entity>
+    </a-entity>
+
+    <a-entity position="-20 19 0">
+
+      <a-entity position="0 -4 0" text="font: aileronsemibold; width: 10; color: black; value: TARGETS\nREMAINING;">
+      </a-entity>
+
+      <a-entity id="targets" position="8 -4 0" text="font: exo2bold; width: 30; color: black; value: 20;">
+      </a-entity>
+    </a-entity>
+
+    <a-entity position="28 19 0">
+      <a-entity position="0 -2 0" text="font: exo2bold; value: SCORE; align: center; width: 30; color: black">
+      </a-entity>
+      <a-entity id="score" position="0 -4 0" text="font: exo2bold; color: black; value: 0; align: center; width: 30;">
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="gameover" visible="false" position="0 0 0"
+      text="font: exo2bold; align: center; color: blue; value: GAME OVER; width: 60">
+    </a-entity>
+
   </a-scene>
 </body>
 
