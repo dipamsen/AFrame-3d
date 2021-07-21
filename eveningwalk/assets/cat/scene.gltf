@@ -1,0 +1,262 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 6246,
+      "max": [
+        72.223136901855469,
+        277.95947265625,
+        332.753173828125
+      ],
+      "min": [
+        -72.22100830078125,
+        -484.04043579101562,
+        1.5282900333404541
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 74952,
+      "componentType": 5126,
+      "count": 6246,
+      "max": [
+        0.9994586706161499,
+        0.99965482950210571,
+        0.99965280294418335
+      ],
+      "min": [
+        -0.99946033954620361,
+        -0.99720799922943115,
+        -0.99942988157272339
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 6246,
+      "max": [
+        0.99961602687835693,
+        0.99998980760574341,
+        0.99990212917327881,
+        1
+      ],
+      "min": [
+        -0.99922710657119751,
+        -0.99998104572296143,
+        -0.99988716840744019,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 6246,
+      "max": [
+        6245
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "sinork123 (https://sketchfab.com/sinork123)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/e50773b1d03f49bea7da90f45fa5523b",
+      "title": "Low-poly cat"
+    },
+    "generator": "Sketchfab-3.18.6",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 24984,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 149904,
+      "byteOffset": 24984,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 99936,
+      "byteOffset": 174888,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 274824,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "RootNode",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "grp1__0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "88ba5406b6ac460a9aa6e455e1ee7b56.fbx"
+    },
+    {
+      "children": [
+        4,
+        6
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        -0.78266622456244161,
+        -0.23853374581145975,
+        -0.57492193647340284,
+        0,
+        -0.19224150947740598,
+        0.97113420911280535,
+        -0.14121455280775608,
+        0,
+        0.59201079632302478,
+        2.7755575615628914e-16,
+        -0.80593003234584693,
+        0,
+        891.3629150390625,
+        456.55715942382812,
+        570.60406494140625,
+        1
+      ],
+      "name": "CINEMA_4D_Editor"
+    },
+    {
+      "name": ""
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        6.1102472748153502e-08,
+        5.5511151231257827e-17,
+        0.99999999999999822,
+        0,
+        0.99999999999999822,
+        0,
+        -6.1102472692642351e-08,
+        0,
+        1.6653345369377348e-16,
+        1,
+        0,
+        0,
+        -4.8648559289914808e-38,
+        5.6204986572265625,
+        3.5697838279073984e-16,
+        1
+      ],
+      "name": "grp1"
+    },
+    {
+      "mesh": 0,
+      "name": "grp1__0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+

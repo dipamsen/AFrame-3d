@@ -9,7 +9,33 @@
 </head>
 
 <body>
-  <a-scene>
+  <a-scene background="color: #454545">
+
+    <a-camera position="0 2.5 0"></a-camera>
+
+    <a-assets>
+      <a-asset id="cat" src="./assets/cat/scene.gltf"></a-asset>
+      <a-asset id="bench" src="./assets/wooden_bench/scene.gltf"></a-asset>
+      <a-asset id="lamp" src="./assets/street_light/scene.gltf"></a-asset>
+      <a-asset id="girl" src="https://raw.githubusercontent.com/whitehatjr/PRO-VR-C148/main/assets/girl/scene.gltf">
+      </a-asset>
+    </a-assets>
+
+
+    <a-plane color="black" width="20" height="6" rotation="-90 0 0" position="0 0 -6"></a-plane>
+
+    <a-entity gltf-model="#cat" scale="0.0025 0.0025 0.0025" position="1 0 -5"></a-entity>
+
+    <a-entity gltf-model="#bench" scale="0.01 0.01 0.01" position="-2 0 -6" rotation="0 180 0"></a-entity>
+
+    <a-entity gltf-model="#lamp" scale="0.2 0.2 0.2" position="-4 0 -5"></a-entity>
+
+    <a-entity gltf-model="#girl" scale="0.001 0.001 0.001" position="-1 0 -4.6" rotation="0 90 0"></a-entity>
+
+
+    <a-entity light="type: point; castShadow: true; color: #e6ca14; intensity: 2.35" position="-4.015 2.675 -5.024">
+    </a-entity>
+    <a-entity light="type: ambient;"> </a-entity>
   </a-scene>
 </body>
 

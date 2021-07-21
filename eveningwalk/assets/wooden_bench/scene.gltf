@@ -1,0 +1,457 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 3612,
+      "max": [
+        1.3915802240371704,
+        0.49462020397186279,
+        1.836687445640564
+      ],
+      "min": [
+        -1.3845311403274536,
+        -0.82135534286499023,
+        0.69187748432159424
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 43344,
+      "componentType": 5126,
+      "count": 3612,
+      "max": [
+        0.94979459047317505,
+        0.99997544288635254,
+        0.99998641014099121
+      ],
+      "min": [
+        -0.9497947096824646,
+        -0.99948740005493164,
+        -0.96767240762710571
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 21336,
+      "max": [
+        3611
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 86688,
+      "componentType": 5126,
+      "count": 560,
+      "max": [
+        1.4085813760757446,
+        0.52972495555877686,
+        1.8768689632415771
+      ],
+      "min": [
+        -1.3983659744262695,
+        -0.87355631589889526,
+        0.63816672563552856
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 93408,
+      "componentType": 5126,
+      "count": 560,
+      "max": [
+        0.87696903944015503,
+        0.99999284744262695,
+        0.99996089935302734
+      ],
+      "min": [
+        -0.87697309255599976,
+        -0.99999284744262695,
+        -0.99996066093444824
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 85344,
+      "componentType": 5125,
+      "count": 3192,
+      "max": [
+        559
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 100128,
+      "componentType": 5126,
+      "count": 3760,
+      "max": [
+        1.468571662902832,
+        0.80823832750320435,
+        1.9080959558486938
+      ],
+      "min": [
+        -1.4618991613388062,
+        -1.0155764818191528,
+        0.0063323564827442169
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 145248,
+      "componentType": 5126,
+      "count": 3760,
+      "max": [
+        0.99998784065246582,
+        0.99999332427978516,
+        0.9999997615814209
+      ],
+      "min": [
+        -0.99998784065246582,
+        -0.99999487400054932,
+        -0.99998807907104492
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 98112,
+      "componentType": 5125,
+      "count": 22200,
+      "max": [
+        3759
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "3DMish (https://sketchfab.com/3dmish)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/wooden-bench-dd5f87e5b8644111b8180515eed4c54e",
+      "title": "Wooden Bench"
+    },
+    "generator": "Sketchfab-6.31.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 186912,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 190368,
+      "byteOffset": 186912,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 377280,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Bench.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Bench.002",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0758955803843573,
+          0.025681704328248917,
+          0.00073192695059896297,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.76657774390243905
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Bench.003",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.025191469456802475,
+          0.025191469456802475,
+          0.025191469456802475,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.30659298780487804
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Bench_Bench.001_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Bench_Bench.002_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Bench_Bench.003_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "52c2bc72dbd94ea7b51eb8f5201fb2df.fbx"
+    },
+    {
+      "children": [
+        4,
+        8,
+        11
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6,
+        7
+      ],
+      "matrix": [
+        102,
+        0,
+        0,
+        0,
+        0,
+        -4.3711390063094768e-06,
+        -99.999999999999901,
+        0,
+        0,
+        99.999999999999901,
+        -4.3711390063094768e-06,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Bench"
+    },
+    {
+      "mesh": 0,
+      "name": "Bench_Bench.001_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Bench_Bench.002_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Bench_Bench.003_0"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        -61.218125928313462,
+        -5.5189010330856298,
+        78.878912195923235,
+        0,
+        -50.522964475928902,
+        79.467244448967989,
+        -33.650937496199795,
+        0,
+        -60.8257406769361,
+        -60.452442692382434,
+        -51.436674111244244,
+        0,
+        -503.62310791015625,
+        590.38623046875,
+        -262.0660400390625,
+        1
+      ],
+      "name": "Lamp"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        1,
+        0,
+        0,
+        -1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "name": ""
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        -79.871022417643346,
+        -35.552503409954298,
+        48.545229211998794,
+        0,
+        -30.380986246188709,
+        93.466675886520704,
+        18.465540160877524,
+        0,
+        -51.938573841309953,
+        9.6311355286815559e-05,
+        -85.453990821502998,
+        0,
+        344.27716064453125,
+        208.10301208496094,
+        -161.006591796875,
+        1
+      ],
+      "name": "Camera"
+    },
+    {
+      "name": ""
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+
