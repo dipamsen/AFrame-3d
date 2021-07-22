@@ -1,0 +1,56 @@
+.title {
+  font-family: "Otomanopee One";
+}
+.body {
+  font-family: "Merriweather Sans";
+}
+
+.text {
+  position: absolute;
+  margin: 0;
+  user-select: none;
+}
+
+.heading {
+  top: 0;
+  left: 10px;
+  font-size: 50px;
+}
+
+#timer {
+  top: 60px;
+  left: 10px;
+  font-size: 35px;
+}
+#targets {
+  top: 60px;
+  left: 220px;
+  font-size: 35px;
+}
+
+.time-rem {
+  top: 70px;
+  left: 120px;
+  width: 20px;
+  font-size: 15px;
+  margin: 0;
+}
+
+.target-rem {
+  top: 70px;
+  left: 275px;
+  width: 20px;
+  font-size: 15px;
+  margin: 0;
+}
+
+#score {
+  top: 40px;
+  right: 60px;
+  font-size: 40px;
+}
+
+.score-in {
+  top: 30px;
+  right: 50px;
+}

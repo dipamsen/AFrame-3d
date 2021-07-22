@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFrame Train</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+  <a-scene background="color: cyan">
+
+    <a-assets>
+      <a-asset id="train-mtl" src="./assets/models/train/obj.mtl"></a-asset>
+      <a-asset id="train-obj" src="./assets/models/train/tinker.obj"></a-asset>
+    </a-assets>
+
+    <a-box src="https://raw.githubusercontent.com/whitehatjr/Project-Solution-PRO-C150/main/images/fortwall.jpg"
+      position="-101 -4 -39" width="102" height="50">
+    </a-box>
+    <a-box src="https://raw.githubusercontent.com/whitehatjr/Project-Solution-PRO-C150/main/images/fortwall.jpg"
+      position="0 -4 -39" width="100" height="50">
+    </a-box>
+    <a-box src="https://raw.githubusercontent.com/whitehatjr/Project-Solution-PRO-C150/main/images/fortwall.jpg"
+      position="100 -4 -39" width="100" height="50">
+    </a-box>
+
+    <a-entity animation="property: position; from: 30 0 0; to: -30 ;easing:linear; loop: true; dur: 10000">
+
+      <!-- Train -->
+      <a-entity obj-model="obj: #train-obj; mtl: #train-mtl;" scale="0.2 0.2 0.2" rotation="270 0 0"
+        position="0 -2 -15">
+      </a-entity>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
