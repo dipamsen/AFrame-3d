@@ -1,77 +1,52 @@
-AFRAME.registerComponent("gameplay", {
-  schema: {
-    elementId: {
-      type: "string",
-      default: "#ring1",
-    },
+// Registering component in Collider.js
+AFRAME.registerComponent("flying-birds", {
+  init: function () {
+    for (var i = 1; i <= 20; i++) {
+      //id
+      var id = `hurdle${i}`;
+
+      //position variables
+      var posX = Math.random() * 3000 + -1000;
+      var posY = Math.random() * 2 + -1;
+      var posZ = Math.random() * 3000 + -1000;
+
+      var position = { x: posX, y: posY, z: posZ };
+
+      //call the function
+      this.flyingBirds(id, position);
+    }
   },
-  init() {
-    const dur = 120;
+  flyingBirds: (id, position) => {
+    //Get the terrain element
+    var terrainEl = document.querySelector("#terrain");
 
-    const timerEl = document.querySelector("#timer");
-    this.startTimer(dur, timerEl);
-  },
-  startTimer(duration, timerElt) {
-    setInterval(() => {
-      duration -= 1;
+    //creating the bird model entity
+    var birdEl = document.createElement("a-entity");
 
-      if (duration == 0) {
-        this.gameOver();
-      }
+    //Setting multiple attributes
+    birdEl.setAttribute("id", id);
 
-      let min = Math.floor(duration / 60).toString();
-      let sec = (duration % 60).toString();
+    birdEl.setAttribute("position", position);
+    birdEl.setAttribute("scale", { x: 500, y: 500, z: 500 });
 
-      min = min.padStart(2, 0);
-      sec = sec.padStart(2, 0);
+    //set the gLTF model attribute
+    birdEl.setAttribute("gltf-model", "./assets/models/flying_bird/scene.gltf");
 
-      if (duration <= 0) {
-        min = "00";
-        sec = "00";
-      }
+    //set animation mixer of models with animation
+    birdEl.setAttribute("animation-mixer", {});
 
-      timerElt.setAttribute("text", { value: min + ":" + sec });
-    }, 1000);
-  },
-  updateTargets() {
-    const targetElt = document.querySelector("#targets");
-    const count = targetElt.getAttribute("text").value;
-    let currTargets = parseInt(count);
-    currTargets -= 1;
-    targetElt.setAttribute("text", { value: currTargets });
-  },
-  updateScore() {
-    const scoreElt = document.querySelector("#score");
-    const count = scoreElt.getAttribute("text").value;
-    let currScore = parseInt(count);
-    currScore += 10;
-    scoreElt.setAttribute("text", { value: currScore });
-  },
-  update() {
-    this.isCollided(this.data.elementId);
-  },
-  isCollided(eltId) {
-    const elt = document.querySelector(eltId);
-
-    elt.addEventListener("collide", (e) => {
-      if (eltId.includes("#ring")) {
-        document.querySelector(eltId).setAttribute("visible", false);
-
-        this.updateTargets();
-        this.updateScore();
-      } else if (eltId.includes("#hurdle")) {
-        document.querySelector(eltId).setAttribute("visible", false);
-        this.gameOver();
-      }
+    //set the static body of the physic system
+    birdEl.setAttribute("static-body", {
+      shape: "sphere",
+      sphereRadius: 3.2,
     });
-  },
-  gameOver() {
-    console.log("Game Over");
 
-    const planeElt = document.querySelector("#plane_model");
-    const gameOverElt = document.querySelector("#gameover");
+    //set the game play attribute
+    birdEl.setAttribute("game-play", {
+      elementId: `#${id}`,
+    });
 
-    gameOverElt.setAttribute("visible", true);
-    planeElt.setAttribute("dynamic-body", { mass: 1 });
+    //append the bird entity as the child of the terrain entity
+    terrainEl.appendChild(birdEl);
   },
 });

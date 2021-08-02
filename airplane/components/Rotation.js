@@ -38,12 +38,14 @@ AFRAME.registerComponent("plane-rotation-reader", {
   },
   init: function () {
     window.addEventListener("keydown", (e) => {
+      //get the data from the attributes
       this.data.speedOfRoation = this.el.getAttribute("rotation");
       this.data.speedOfAscent = this.el.getAttribute("position");
 
       var planeRotation = this.data.speedOfRoation;
       var planePosition = this.data.speedOfAscent;
 
+      //control the attributes with the Arrow Keys
       if (e.key === "ArrowRight") {
         if (planeRotation.x < 10) {
           planeRotation.x += 0.5;
