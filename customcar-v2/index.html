@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="Car.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <a-scene background="color: grey">
+
+    <a-camera position="0 2 4"></a-camera>
+
+    <a-entity rotation="0 -90 0" position="-10 0 -10">
+      <a-cylinder color="blue" position="0 0 -10" radius="8" height="0.5"></a-cylinder>
+      <a-entity position="19 20.69 -7.486">
+
+        <a-entity car id="#car"
+          gltf-model="https://raw.githubusercontent.com/whitehatjr/PRO-VR-C152/main/assets/car/scene.gltf"
+          position="-16.7 -16.5 -3" scale="0.05 0.05 0.05">
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+  </a-scene>
+  <div style="display: flex; justify-content: center;">
+
+    <p class="source">
+      View Source Code on GitHub <br> <a href="https://github.com/dipamsen/AFrame-3D/tree/main/customcar">dipamsen /
+        AFrame-3D</a>
+    </p>
+  </div>
+</body>
+
+</html>

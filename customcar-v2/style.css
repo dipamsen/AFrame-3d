@@ -1,0 +1,15 @@
+p {
+  position: absolute;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.credit {
+  top: 0;
+}
+
+.source {
+  bottom: 0;
+}
