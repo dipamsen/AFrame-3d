@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Scuba Diver</title>
+
+  <meta name="description" content="Scuba Diver">
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset id="fish-model" src="./assets/fish/scene.gltf"></a-asset>
+      <a-asset id="island-model" src="./assets/island/scene.gltf"></a-asset>
+    </a-assets>
+
+    <a-sky color="#040044" top-color="skyblue"></a-sky>
+
+    <a-entity camera position="0 2 10" wasd-controls="enabled: true"></a-entity>
+
+    <a-entity id="island" gltf-model="#island-model" scale="0.1 0.1 0.1" rotation="0 180 0"></a-entity>
+
+    <a-entity id="fish" gltf-model="#fish-model" scale="0.03 0.03 0.03" position="0 -3 6"></a-entity>
+
+    <!-- <a-entity id="water" geometry="primitive: sphere; radius: 6" position="0 -5 0" color="lightblue"></a-entity> -->
+
+  </a-scene>
+</body>
+
+</html>
