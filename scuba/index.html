@@ -17,15 +17,22 @@
       <a-asset id="island-model" src="./assets/island/scene.gltf"></a-asset>
     </a-assets>
 
-    <a-sky color="#040044" top-color="skyblue"></a-sky>
+    <!-- Sky -->
+    <a-sky geometry="primitive: sphere;"
+      material="shader: gradient; bottomColor: #00009e; topColor:109 205 227;offset: 0.0001;" radius="100"
+      theta-length="180" side="double"
+      animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000">
+
+    </a-sky>
 
     <a-entity camera position="0 2 10" wasd-controls="enabled: true"></a-entity>
 
-    <a-entity id="island" gltf-model="#island-model" scale="0.1 0.1 0.1" rotation="0 180 0"></a-entity>
+    <a-entity id="island" gltf-model="#island-model" scale="0.1 0.1 0.1">
+    </a-entity>
+
+    <a-entity id="diver" diver-rotation-reader></a-entity>
 
     <a-entity id="fish" gltf-model="#fish-model" scale="0.03 0.03 0.03" position="0 -3 6"></a-entity>
-
-    <!-- <a-entity id="water" geometry="primitive: sphere; radius: 6" position="0 -5 0" color="lightblue"></a-entity> -->
 
   </a-scene>
 </body>

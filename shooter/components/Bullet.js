@@ -20,7 +20,7 @@ AFRAME.registerComponent("bullets", {
 
         bullet.setAttribute("velocity", dir.multiplyScalar(-10));
 
-        bullet.addEventListener("collide", this.collideHandler);
+        bullet.addEventListener("collide", (e) => this.collideHandler(e));
 
         const scene = document.querySelector("#scene");
         scene.appendChild(bullet);
@@ -32,6 +32,7 @@ AFRAME.registerComponent("bullets", {
     const box = e.detail.body.el; // elHit
 
     if (box.id.includes("box")) {
+      this.shootSound();
       //      box.setAttribute("material", { opacity: 0.6, transparent: true });
       bullet.removeEventListener("collide", this.shootBullet);
 
@@ -43,5 +44,9 @@ AFRAME.registerComponent("bullets", {
 
       box.body.applyImpulse(impulse, worldPoint);
     }
+  },
+  shootSound() {
+    const en = document.querySelector("#sound2");
+    en.components.sound.playSound();
   },
 });
