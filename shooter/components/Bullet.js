@@ -9,8 +9,15 @@ AFRAME.registerComponent("bullets", {
         bullet.setAttribute("geometry", { primitive: "sphere", radius: 0.1 });
         bullet.setAttribute("material", { color: "black" });
         const camera = document.querySelector("#camera");
-        const pos = camera.getAttribute("position");
-        bullet.setAttribute("position", { x: pos.x, y: pos.y, z: pos.z });
+        let pos = camera.getAttribute("position");
+        const cam = document.querySelector("#camera-rig");
+        pos = cam.getAttribute("position");
+
+        bullet.setAttribute("position", {
+          x: pos.x,
+          y: pos.y + 1,
+          z: pos.z - 0.5,
+        });
         bullet.setAttribute("dynamic-body", { shape: "sphere", mass: 0 });
 
         const camObj = document.querySelector("#camera").object3D;

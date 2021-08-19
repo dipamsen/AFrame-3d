@@ -8,6 +8,8 @@
   <meta name="description" content="Scuba Diver">
 
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+  <script src="./components/Rotation.js"></script>
 </head>
 
 <body>
@@ -18,19 +20,23 @@
     </a-assets>
 
     <!-- Sky -->
-    <a-sky geometry="primitive: sphere;"
-      material="shader: gradient; bottomColor: #00009e; topColor:109 205 227;offset: 0.0001;" radius="100"
+    <a-sky geometry="primitive: sphere"
+      material="shader: gradient; bottomColor: #00009e; topColor:109 205 227; offset: 0.0001;" radius="100"
       theta-length="180" side="double"
-      animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000">
+      animation="property: rotation; to: 0 300 0; easing: linear; loop: true; dur: 500000">
 
     </a-sky>
 
-    <a-entity camera position="0 2 10" wasd-controls="enabled: true"></a-entity>
 
     <a-entity id="island" gltf-model="#island-model" scale="0.1 0.1 0.1">
     </a-entity>
 
-    <a-entity id="diver" diver-rotation-reader></a-entity>
+    <a-entity id="diver" diver-rotation-reader geometry="primitive: box" position="0 0 8" rotation="0 0 0">
+      <a-entity camera position="0 2 2" wasd-controls="enabled: false"></a-entity>
+
+    </a-entity>
+    <a-sphere id="bubble" position="0 0 -5" radius="0.1" color="white"
+      animation="property: position; to: 0 6 -5; easing:linear; loop: true; dur: 2000"></a-sphere>
 
     <a-entity id="fish" gltf-model="#fish-model" scale="0.03 0.03 0.03" position="0 -3 6"></a-entity>
 

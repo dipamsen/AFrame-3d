@@ -64,12 +64,21 @@ AFRAME.registerComponent("boxes", {
     },
   },
   init() {
+    const px = [
+      22.86, -17.35, -12.81, 0.44, -30.18, -25.89, 15.61, 29.68, 11.95, -15.4,
+      -14.09, 34.76, 2.29, 21.77, 1.57, 34.72, 12.04, -10.9, 6.48, 15.66,
+    ];
+    const pz = [
+      54.56, -4.71, 14.91, 56.74, 41.13, 50.76, 57.84, 7.02, -5.24, -26.82,
+      27.59, -35.78, 34.52, 31.32, -9.22, 26.72, 48.9, 27.24, 9.94, 54.29,
+    ];
+
     for (let i = 0; i < 20; i++) {
       const box = document.createElement("a-entity");
       box.setAttribute("id", "box" + i);
-      const x = Math.random() * 100 - 50;
+      const x = px[i]; // Math.random() * 100 - 50;
       const y = 2.5;
-      const z = Math.random() * 100 - 50;
+      const z = pz[i]; // Math.random() * 100 - 50;
       const pos = { x, y, z };
       box.setAttribute("position", pos);
 
@@ -93,4 +102,3 @@ AFRAME.registerComponent("boxes", {
     }
   },
 });
-

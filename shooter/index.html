@@ -8,7 +8,11 @@
     src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+  <script src="components/PlayerMovement.js"></script>
   <script src="components/Bullet.js"></script>
 
   <script src="GameObjects.js"></script>
@@ -16,7 +20,7 @@
 </head>
 
 <body>
-  <a-scene id="scene">
+  <a-scene id="scene" inspector-plugin-recast>
 
     <!--Assets-->
     <a-assets>
@@ -24,18 +28,27 @@
       <a-asset id="fence" src="./models/fence/scene.gltf"></a-asset>
       <audio id="footstep" src="./sounds/footStep.mp3"></audio>
       <audio id="shoot" src="./sounds/shoot.mp3"></audio>
+      <a-asset item id="collider" src="./models/navmesh/scene.gltf">
     </a-assets>
 
     <!--Light-->
     <a-entity light="type: ambient; color: yellow; intensity:0.5"></a-entity>
 
-    <!--Camera and Cursor-->
-    <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls="pointerLockEnabled: false">
 
-      <a-entity id="gun" gltf-model="#shooter" position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1"></a-entity>
+    <a-entity id="camera-rig" movement-controls="speed: 0.2; constrainToNavMesh: true" position="0 1 2">
+      <!--Camera and Cursor-->
+      <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: false">
 
-      <a-cursor></a-cursor>
+        <a-entity id="gun" player-movement gltf-model="#shooter" position="0 -4.4 3" rotation="0 180 0"
+          scale="0.35 1 1">
+        </a-entity>
+
+        <a-cursor></a-cursor>
+      </a-entity>
     </a-entity>
+
+    <!-- Navigation Mesh -->
+    <a-entity id="navmesh" gltf-model="#collider" visible="false" nav-mesh> </a-entity>
 
     <!-- Wired Fence -->
     <a-entity wire-fence boxes></a-entity>
@@ -55,7 +68,7 @@ Boxes
     <a-box id="box4" position="-1 2.5 -10" color="tomato" depth="1" height="1" width="1" dynamic-body></a-box>
     <a-box id="box5" position="1 2.5 -10" color="tomato" depth="1" height="1" width="1" dynamic-body></a-box>
     <a-box id="box6" position="0 3.5 -10" color="tomato" depth="1" height="1" width="1" dynamic-body></a-box> -->
-    -->
+
     <!-- Walls -->
     <!-- <a-box id="wall1" color="green" depth="1" height="50" width="10" static-body position="-20 1.5 -20"></a-box>
     <a-box id="wall2" color="green" depth="1" height="50" width="10" static-body position="0 1.5 -20"></a-box>
@@ -65,8 +78,8 @@ Boxes
     <a-box id="wall6" color="green" depth="1" height="50" width="10" opacity="0.5" position="-30 1.5 -20"></a-box>
     <a-box id="wall7" color="green" depth="1" height="50" width="10" opacity="0.5" position="30 1.5 -20"></a-box> -->
 
-    <a-entity id="sound1" sound="src: #footstep; poolsize: 2; autoplay: false; volume: 4; loop: false"></a-entity>
-    <a-entity id="sound2" sound="src: #shoot; poolsize: 2; autoplay: false; volume: 1; loop: false"></a-entity>
+    <a-entity id="sound1" sound="src: #footstep; poolSize: 2; autoplay: false; volume: 4; loop: false"></a-entity>
+    <a-entity id="sound2" sound="src: #shoot; poolSize: 2; autoplay: false; volume: 1; loop: false"></a-entity>
 
     <a-entity id="environment" environment="preset: egypt; skyType: gradient; lighting: point"></a-entity>
   </a-scene>
