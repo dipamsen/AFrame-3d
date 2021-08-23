@@ -7,9 +7,14 @@
 
   <meta name="description" content="Scuba Diver">
 
+  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+  <!-- A-Frame Extras -->
   <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+
   <script src="./components/Rotation.js"></script>
+  <script src="./components/Generator.js"></script>
 </head>
 
 <body>
@@ -35,10 +40,26 @@
       <a-entity camera position="0 2 2" wasd-controls="enabled: false"></a-entity>
 
     </a-entity>
+
     <a-sphere id="bubble" position="0 0 -5" radius="0.1" color="white"
       animation="property: position; to: 0 6 -5; easing:linear; loop: true; dur: 2000"></a-sphere>
 
-    <a-entity id="fish" gltf-model="#fish-model" scale="0.03 0.03 0.03" position="0 -3 6"></a-entity>
+    <!-- Sample Fish -->
+    <a-entity id="sample-fish" gltf-model="#fish-model" scale="0.3 0.3 0.3" rotation="0 180 0"
+      animation="property: position; to: 20 0 0; loop: true; dur: 20000" generator-sample="identifier: fish"></a-entity>
+
+    <!-- Generator for Fishes -->
+    <a-entity id="fishes" generator="identifier: fish; sample: #sample-fish">
+    </a-entity>
+
+    <!-- Sample Treasure -->
+    <a-entity id="sample-treasure" material="color: #ff9100" geometry="primitive: circle; radius: 1"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 1000" generator-sample="identifier: treasure">
+    </a-entity>
+
+    <!-- Generator for Treasure -->
+    <a-entity id="treasures" generator="identifier: treasure; sample: #sample-treasure">
+    </a-entity>
 
   </a-scene>
 </body>
