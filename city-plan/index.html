@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>City Design</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawcdn.githack.com/AR-js-org/AR.js/69abf00b24836313feaab3268017d40d1e8cf987/aframe/build/aframe-ar.js"></script>
+    <script src="MarkerHandler.js"></script>
+    <script src="LoadModels.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene
+      load-models
+      id="main-scene"
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      embedded
+    >
+      <a-entity id="camera" look-controls="enabled: false" camera></a-entity>
+    </a-scene>
+  </body>
+</html>

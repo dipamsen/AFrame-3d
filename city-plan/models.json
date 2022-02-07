@@ -1,0 +1,20 @@
+[
+  {
+    "barcodeValue": 0,
+    "name": "car",
+    "modelUrl": "./assets/car_model/Convertible.gltf",
+    "scale": 0.1
+  },
+  {
+    "barcodeValue": 1,
+    "name": "apartment_1",
+    "modelUrl": "./assets/building_2/Apartment.gltf",
+    "scale": 0.1
+  },
+  {
+    "barcodeValue": 2,
+    "name": "apartment_2",
+    "modelUrl": "./assets/building_apartment_2/scene.gltf",
+    "scale": 0.001
+  }
+]
