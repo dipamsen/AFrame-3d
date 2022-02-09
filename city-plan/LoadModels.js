@@ -1,14 +1,15 @@
 AFRAME.registerComponent("load-models", {
-  init() {
-    this.fetchModels();
+  async init() {
+    const models = await this.fetchModels();
+    for (const model of models) {
+      this.createModel(model);
+    }
+    this.createFullDesign(models);
   },
   async fetchModels() {
     const url = "models.json";
     const res = await fetch(url);
-    const models = await res.json();
-    for (const model of models) {
-      this.createModel(model);
-    }
+    return await res.json();
   },
   createModel(model) {
     const scene = document.querySelector("#main-scene");
@@ -24,6 +25,7 @@ AFRAME.registerComponent("load-models", {
 
     const modelEl = document.createElement("a-entity");
     modelEl.setAttribute("id", `model-${model.barcodeValue}`);
+    modelEl.setAttribute("city-design-model", {});
     modelEl.setAttribute("gltf-model", model.modelUrl);
     modelEl.setAttribute("scale", {
       x: model.scale,
@@ -39,4 +41,55 @@ AFRAME.registerComponent("load-models", {
     // modelEl.setAttribute("visible", false);
     marker.appendChild(modelEl);
   },
+  createFullDesign(models) {
+    const fullDesign = document.createElement("a-entity");
+    fullDesign.setAttribute("id", "full-design");
+    fullDesign.setAttribute("position", {
+      x: 0,
+      y: 0,
+      z: -5,
+    });
+    fullDesign.setAttribute("rotation", {
+      x: 0,
+      y: 90,
+      z: 90,
+    });
+    models.forEach((mdl) => {
+      const et = document.createElement("a-entity");
+      et.setAttribute("id", `model-full-${mdl.barcodeValue}`);
+      et.setAttribute("gltf-model", mdl.modelUrl);
+      et.setAttribute("scale", {
+        x: mdl.scale,
+        y: mdl.scale,
+        z: mdl.scale,
+      });
+      const carPos = { x: 0, y: 0, z: 0 };
+      const carRot = { x: 0, y: 90, z: 0 };
+      const b1Pos = { x: 0, y: 0, z: -0.7 };
+      const b2Pos = { x: 0.4, y: 0, z: 0.7 };
+      et.setAttribute(
+        "position",
+        mdl.name === "car" ? carPos : mdl.name === "apartment_1" ? b1Pos : b2Pos
+      );
+      et.setAttribute(
+        "rotation",
+        mdl.name === "car"
+          ? carRot
+          : {
+              x: 0,
+              y: 0,
+              z: 0,
+            }
+      );
+      fullDesign.append(et);
+    });
+    fullDesign.setAttribute("visible", false);
+    const scene = document.querySelector("a-scene");
+    scene.append(fullDesign);
+    // document.querySelector("#marker-1").append(fullDesign);
+  },
 });
+
+// AFRAME.registerComponent("city-design-model", {
+//   init() {},
+// });
