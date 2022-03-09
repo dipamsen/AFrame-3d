@@ -11,14 +11,18 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@master/aframe/build/aframe-ar.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/dist/gestures.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <link href="./style.css" rel="stylesheet" />
   <script src="app.js"></script>
+  <script src="MarkerHandler.js"></script>
 </head>
 
-<body>
-  <a-scene vr-mode-ui="enabled: false" embedded
-    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
-    gesture-detector createbuttons>
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+    sourceWidth:1280; sourceHeight:960; 
+    displayWidth: 1280; displayHeight: 960; 
+    debugUIEnabled: false;" gesture-detector create-buttons id="scene" marker-handler>
     <a-entity camera></a-entity>
 
     <a-assets>
@@ -42,7 +46,7 @@
       </a-plane>
     </a-marker>
   </a-scene>
-  <div id=" buttons">
+  <div id="buttons">
   </div>
 </body>
 
