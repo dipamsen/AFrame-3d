@@ -13,13 +13,28 @@
   <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/dist/gestures.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9sROsumGlF7zUuu4YOHsJ6rhKz538UVc",
+      authDomain: "menu-card-bcf02.firebaseapp.com",
+      projectId: "menu-card-bcf02",
+      storageBucket: "menu-card-bcf02.appspot.com",
+      messagingSenderId: "893550143269",
+      appId: "1:893550143269:web:5ad8664c75f76b61eb9ccc",
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+  </script>
+
   <link href="./style.css" rel="stylesheet" />
   <script src="app.js"></script>
   <script src="MarkerHandler.js"></script>
+  <script src="CreateMarker.js"></script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+  <a-scene createmarker vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
     sourceWidth:1280; sourceHeight:960; 
     displayWidth: 1280; displayHeight: 960; 
     debugUIEnabled: false;" gesture-detector create-buttons id="scene" marker-handler>
@@ -28,7 +43,7 @@
     <a-assets>
       <a-asset-item id="crane-model" src="./assets/models/crane/scene.gltf"></a-asset-item>
     </a-assets>
-    <a-marker id="crane-marker" type="pattern" url="./assets/patterns/pattern-crane.patt" cursor="rayOrigin: mouse">
+    <!-- <a-marker id="crane-marker" type="pattern" url="./assets/patterns/pattern-crane.patt" cursor="rayOrigin: mouse">
       <a-entity id="crane-3D-model" position="-2.3 0 0.5" rotation="-90 0 0" scale="5 5 5" gltf-model="#crane-model"
         gesture-handler animation-mixer>
       </a-entity>
@@ -44,7 +59,7 @@
         <a-entity position="-0.75 -0.8 0.1" rotation="0 0 0"
           text="color: #290149; align: center; width: 2;height:5; font: aileronsemibold;"> </a-entity>
       </a-plane>
-    </a-marker>
+    </a-marker> -->
   </a-scene>
   <div id="buttons">
   </div>
