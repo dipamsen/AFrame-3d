@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
   <title>Toy Store</title>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -34,35 +36,20 @@
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-  <a-scene createmarker vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
-    sourceWidth:1280; sourceHeight:960; 
-    displayWidth: 1280; displayHeight: 960; 
-    debugUIEnabled: false;" gesture-detector create-buttons id="scene" marker-handler>
-    <a-entity camera></a-entity>
 
-    <a-assets>
-      <a-asset-item id="crane-model" src="./assets/models/crane/scene.gltf"></a-asset-item>
-    </a-assets>
-    <!-- <a-marker id="crane-marker" type="pattern" url="./assets/patterns/pattern-crane.patt" cursor="rayOrigin: mouse">
-      <a-entity id="crane-3D-model" position="-2.3 0 0.5" rotation="-90 0 0" scale="5 5 5" gltf-model="#crane-model"
-        gesture-handler animation-mixer>
-      </a-entity>
-      <a-plane position="0 0 0" width="2.3" height="2.5" rotation="-90 0 0" color="#ffd880">
-        <a-plane position="0 1.1 0.1" width="2.31" height="0.4" rotation="0 0 0" color="#f14668">
-          <a-entity position="1.3 0 0.1" rotation="0 0 0"
-            text="font:roboto;value:HYDRAULIC CRANE;color:#290149;width: 4.5;height:3;align:left;"></a-entity>
-        </a-plane>
-        <a-entity position="0.1 0 0.1" rotation="0 0 0"
-          text="color: #6b011f; align: left; width: 2;height:5;font: roboto;
-               value:Friction powered crane truck toy, 360-degree rotating left and right, machine can pull up & down, swing left & right.">
-        </a-entity>
-        <a-entity position="-0.75 -0.8 0.1" rotation="0 0 0"
-          text="color: #290149; align: center; width: 2;height:5; font: aileronsemibold;"> </a-entity>
-      </a-plane>
-    </a-marker> -->
-  </a-scene>
-  <div id="buttons">
-  </div>
-</body>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+      sourceWidth:1280; sourceHeight:960; 
+      displayWidth: 1280; displayHeight: 960; 
+      debugUIEnabled: false;" gesture-detector create-buttons id="scene" create-markers>
+      <a-entity camera></a-entity>
+
+      <a-assets>
+        <a-asset-item id="crane-model" src="./assets/models/crane/scene.gltf"></a-asset-item>
+      </a-assets>
+    </a-scene>
+    <div id="buttons">
+    </div>
+  </body>
 
 </html>

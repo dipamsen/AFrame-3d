@@ -1,4 +1,4 @@
-AFRAME.registerComponent("createmarker", {
+AFRAME.registerComponent("create-markers", {
   async init() {
     const scene = document.querySelector("a-scene");
     const toys = await this.getData();
@@ -6,6 +6,7 @@ AFRAME.registerComponent("createmarker", {
     toys.forEach((toy) => {
       const marker = document.createElement("a-marker");
       marker.setAttribute("id", toy.id);
+      marker.setAttribute("type", "pattern");
       marker.setAttribute("url", toy.marker_pattern_url);
       marker.setAttribute("cursor", "rayOrigin: mouse");
       marker.setAttribute("marker-handler", {});
@@ -16,7 +17,16 @@ AFRAME.registerComponent("createmarker", {
       model.setAttribute("id", `${toy.id}-model`);
       model.setAttribute("gesture-handler", {});
       model.setAttribute("animation-mixer", {});
+      model.setAttribute("visible", false);
       marker.appendChild(model);
+
+      const priceText = document.createElement("a-entity");
+      priceText.setAttribute("id", `${toy.id}-price`);
+      priceText.setAttribute("text", {
+        value: `Rs. ${toy.price}`,
+        width: 1,
+      });
+      marker.appendChild(priceText);
     });
   },
 

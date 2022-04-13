@@ -5,7 +5,7 @@ button {
 #buttons {
   display: none;
   align-items: center;
-  justify-content: space-around;
+  right: 0;
   position: fixed;
   bottom: 10px;
   width: 100%;
